@@ -14,8 +14,12 @@ fn calculate_factorial(string_number: u64) -> String {
         first_row: vec![1, 2, 1],
         second_row: vec![1, 1],
     };
-    calculation.multiply();
-    return String::from("");
+    let result = calculation
+        .multiply()
+        .into_iter()
+        .map(|i| i.to_string())
+        .collect::<String>();
+    return result;
 }
 
 fn validate_number(string_number: String) -> Result<String, String> {
