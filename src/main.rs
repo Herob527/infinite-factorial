@@ -1,4 +1,10 @@
-use std::{env, fmt::format};
+use std::env;
+
+use calculation::Calculation;
+mod calculation;
+mod multiply_vectors;
+mod normalise_vector;
+mod value;
 
 fn calculate_factorial(string_number: u64) -> String {
     if (0..=1).contains(&string_number) {
