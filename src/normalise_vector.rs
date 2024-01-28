@@ -4,6 +4,7 @@ pub fn normalise_vector(vector: Vec<Value>) -> Vec<u8> {
     if vector.iter().all(|entry| entry.value < 10) {
         return vector.iter().map(|entry| entry.value).collect();
     };
+    dbg!(vector);
     return vec![];
 }
 
