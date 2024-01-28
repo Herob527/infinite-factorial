@@ -12,7 +12,7 @@ impl Calculation {
         // dbg!(&result);
         let normalised_vector = normalise_vector(result);
         // dbg!(&normalised_vector);
-        return vec![0];
+        return normalised_vector;
     }
 }
 
