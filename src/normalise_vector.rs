@@ -1,48 +1,25 @@
 use crate::value::Value;
 
+fn check_is_normalised(vector: &Vec<u8>) -> bool {
+    vector.iter().all(|entry| entry < &10)
+}
+
 pub fn normalise_vector(vector: Vec<Value>) -> Vec<u8> {
     if vector.iter().all(|entry| entry.value < 10) {
         return vector.iter().map(|entry| entry.value).collect();
     };
-    let mut is_normalised = false;
-    let mut vector_copy = vector.clone();
-    let mut index = 0;
-    while !is_normalised {
-        dbg!(index);
-        let mut remember: u8 = 0;
-        vector_copy.reverse();
-        is_normalised = true;
-        let reversed_version = vector_copy.iter();
-        let mut resulting_vector: Vec<u8> = Vec::new();
-        for entry in reversed_version {
-            let current_entry = entry.to_owned().value + remember;
-            if current_entry >= 10 {
-                remember = (f32::from(current_entry) / f32::from(10 as u8)).floor() as u8;
-                let remainder = current_entry.to_owned() % 10 as u8;
-                is_normalised = false;
-                resulting_vector.insert(entry.col_sum, remainder);
-                continue;
-            }
 
-            let val_under_index = resulting_vector.get(entry.col_sum);
-            dbg!(entry.col_sum);
-            if val_under_index.is_none() {
-                resulting_vector.insert(entry.col_sum, current_entry);
-            } else {
-                resulting_vector[entry.col_sum] += val_under_index.unwrap().to_owned();
-            }
-            dbg!(&resulting_vector);
+    let mut result: Vec<u8> = Vec::new();
+
+    for (index, entry) in vector.iter().enumerate() {
+        if Some(&0) == result.get(index) {
+            result[index] += entry.value
+        } else {
+            result.insert(0, entry.value)
         }
-        if remember > 0 {
-            resulting_vector.insert(0, remember);
-            is_normalised = true;
-        }
-        if is_normalised {
-            return resulting_vector;
-        }
-        index += 1;
     }
-    return vec![];
+
+    return result;
 }
 
 #[cfg(test)]
