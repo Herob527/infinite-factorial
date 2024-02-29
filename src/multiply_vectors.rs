@@ -22,11 +22,18 @@ pub fn multiply_vectors(vec1: Vec<u8>, vec2: Vec<u8>) -> Vec<Value> {
 
 #[cfg(test)]
 mod tests3 {
-    // Note this useful idiom: importing names from outer (for mod tests) scope.
-    use super::*;
+    use crate::multiply_vectors::multiply_vectors;
+
     #[test]
     fn test_multiply_vectors() { 
         let vector: Vec<u8> = multiply_vectors(vec![1, 2, 1], vec![9]).iter().map(|x| x.value).collect();
         debug_assert_eq!(vector, vec![9, 18, 9]);
+    }
+    
+    #[test]
+    fn test_multiply_vectors2() {
+
+        let vector: Vec<u8> = multiply_vectors(vec![1], vec![1, 0]).iter().map(|x| x.value).collect();
+        debug_assert_eq!(vector, vec![1, 0]);
     }
 }
