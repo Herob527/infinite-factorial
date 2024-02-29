@@ -21,7 +21,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_multiply_1() {
+    fn test_calculate_multiply_1() {
         let calculation = Calculation {
             first_row: vec![1, 2, 1],
             second_row: vec![1, 0],
@@ -30,7 +30,7 @@ mod tests {
     }
 
     #[test]
-    fn test_multiply_2() {
+    fn test_calculate_multiply_2() {
         let calculation = Calculation {
             first_row: vec![1, 2],
             second_row: vec![1, 0],
@@ -39,7 +39,7 @@ mod tests {
     }
 
     #[test]
-    fn test_multiply_3() {
+    fn test_calculate_multiply_3() {
         let calculation = Calculation {
             first_row: vec![1],
             second_row: vec![1, 0],
@@ -48,7 +48,7 @@ mod tests {
     }
 
     #[test]
-    fn test_multiply_4() {
+    fn test_calculate_multiply_4() {
         let calculation = Calculation {
             first_row: vec![1, 2],
             second_row: vec![1, 2],
@@ -57,7 +57,7 @@ mod tests {
     }
 
     #[test]
-    fn test_multiply_5() {
+    fn test_calculate_multiply_5() {
         let calculation = Calculation {
             first_row: vec![1, 2, 5],
             second_row: vec![2],
@@ -66,7 +66,7 @@ mod tests {
     }
 
     #[test]
-    fn test_multiply_6() {
+    fn test_calculate_multiply_6() {
         let calculation = Calculation {
             first_row: vec![1, 2, 1],
             second_row: vec![9],

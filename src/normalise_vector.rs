@@ -1,7 +1,25 @@
+use std::ops::Deref;
+
 use crate::value::Value;
 
 fn check_is_normalised(vector: &Vec<u8>) -> bool {
     vector.iter().all(|entry| entry < &10)
+}
+
+fn normalise_step(vector: Vec<u8>) -> Vec<u8> {
+    let mut cloned_vec = vector.clone();
+    for (index, entry) in cloned_vec.clone().iter().enumerate() {
+        if entry >= &10 {
+            let digit = cloned_vec[index] / 10;
+            cloned_vec[index] = entry % 10;
+            if index == 0 {
+                cloned_vec.insert(0, digit);
+            } else {
+                cloned_vec[index - 1] += digit
+            }
+        }
+    }
+    cloned_vec
 }
 
 pub fn normalise_vector(vector: Vec<Value>) -> Vec<u8> {
@@ -11,15 +29,23 @@ pub fn normalise_vector(vector: Vec<Value>) -> Vec<u8> {
 
     let mut result: Vec<u8> = Vec::new();
 
-    for (index, entry) in vector.iter().enumerate() {
-        if Some(&0) == result.get(index) {
-            result[index] += entry.value
+    println!("{:#?}", vector);
+    for entry in vector.iter() {
+        if result.get(entry.col_sum).is_some() {
+            result[entry.col_sum] += entry.value
         } else {
             result.insert(0, entry.value)
         }
     }
+    println!("{:?}", result);
+    let mut normalised = check_is_normalised(&result);
+    while !normalised {
+        result = normalise_step(result);
+        println!("{:?}", result);
+        normalised = check_is_normalised(&result);
+    }
 
-    return result;
+    result
 }
 
 #[cfg(test)]
