@@ -49,7 +49,7 @@ pub fn normalise_vector(vector: Vec<Value>) -> Vec<u8> {
 }
 
 #[cfg(test)]
-mod tests2 {
+mod tests {
     use crate::multiply_vectors::multiply_vectors;
 
     // Note this useful idiom: importing names from outer (for mod tests) scope.
