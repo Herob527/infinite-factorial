@@ -6,7 +6,7 @@ mod multiply_vectors;
 mod normalise_vector;
 mod value;
 
-fn calculate_factorial(string_number: u8) -> String {
+fn calculate_factorial(string_number: u64) -> String {
     if (0..=1).contains(&string_number) {
         return String::from("1");
     };
@@ -65,8 +65,6 @@ fn main() {
         Err(string) => format!("\x1b[91m[ Error ]\x1b[0m: {}", string),
     };
     println!("{}", result);
-    println!("Actual arg: {}", actual_arg.unwrap());
-    dbg!(args);
 }
 
 #[cfg(test)]

@@ -2,12 +2,12 @@ use crate::{multiply_vectors::multiply_vectors, normalise_vector::normalise_vect
 
 #[derive(Debug, Clone)]
 pub struct Calculation {
-    pub first_row: Vec<u8>,
-    pub second_row: Vec<u8>,
+    pub first_row: Vec<u64>,
+    pub second_row: Vec<u64>,
 }
 
 impl Calculation {
-    pub fn multiply(&self) -> Vec<u8> {
+    pub fn multiply(&self) -> Vec<u64> {
         let result = multiply_vectors(self.clone().first_row, self.clone().second_row);
         normalise_vector(result)
     }
