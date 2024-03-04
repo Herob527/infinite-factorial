@@ -73,4 +73,21 @@ mod tests {
         };
         debug_assert_eq!(calculation.multiply(), vec![1, 0, 8, 9])
     }
+
+    #[test]
+    fn test_calculate_multiply_7() {
+        let calculation = Calculation {
+            first_row: vec![1, 2, 1],
+            second_row: vec![9, 0],
+        };
+        debug_assert_eq!(calculation.multiply(), vec![1, 0, 8, 9, 0])
+    }
+    #[test]
+    fn test_calculate_multiply_8() {
+        let calculation = Calculation {
+            first_row: vec![1, 2, 7],
+            second_row: vec![9, 0],
+        };
+        debug_assert_eq!(calculation.multiply(), vec![1, 1, 4, 3, 0])
+    }
 }
