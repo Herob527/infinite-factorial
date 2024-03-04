@@ -6,8 +6,10 @@ fn check_is_normalised(vector: &Vec<u8>) -> bool {
 
 fn normalise_step(vector: Vec<u8>) -> Vec<u8> {
     let mut cloned_vec = vector.clone();
-    for (index, entry) in cloned_vec.clone().iter().enumerate() {
-        if entry >= &10 {
+    let last_index = cloned_vec.len() - 1;
+    for index in 0..=last_index {
+        let entry = cloned_vec[index];
+        if entry >= 10 {
             let digit = cloned_vec[index] / 10;
             cloned_vec[index] = entry % 10;
             if index == 0 {
@@ -31,19 +33,11 @@ pub fn normalise_vector(vector: Vec<Value>) -> Vec<u8> {
             result.push(entry.value)
         }
     }
-    println!("result: {:?}", result);
     let mut normalised = check_is_normalised(&result);
-    let mut iterations = 0;
     while !normalised {
         result = normalise_step(result);
-        println!("result: {:?}", result);
         normalised = check_is_normalised(&result);
-        if iterations > 100 {
-            panic!("Iterations exceeded 100")
-        }
-        iterations += 1
     }
-    println!("result: {:?}", result);
     result
 }
 
