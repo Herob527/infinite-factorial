@@ -15,8 +15,6 @@ pub fn multiply_vectors(vec1: Vec<u8>, vec2: Vec<u8>) -> Vec<Value> {
             result.push(value);
         }
     }
-    let values: Vec<u8> = result.iter().map(|x| x.value).collect();
-    println!("Result: {:?}", values);
     result
 }
 
