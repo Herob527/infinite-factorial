@@ -1,4 +1,7 @@
-use std::env;
+use std::{
+    env,
+    time::Instant,
+};
 
 use calculation::Calculation;
 mod calculation;
@@ -47,6 +50,7 @@ fn validate_number(string_number: String) -> Result<String, String> {
 }
 
 fn main() {
+    let start = Instant::now();
     let args: Vec<String> = env::args().collect();
     let actual_arg = &args.get(1);
     if actual_arg.is_none() {
@@ -65,7 +69,9 @@ fn main() {
         ),
         Err(string) => format!("\x1b[91m[ Error ]\x1b[0m: {}", string),
     };
+    let duration = start.elapsed();
     println!("{}", result);
+    println!("It took: {:?} ",duration);
 }
 
 #[cfg(test)]
