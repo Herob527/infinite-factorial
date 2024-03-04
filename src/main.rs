@@ -75,92 +75,92 @@ mod tests {
     // Note this useful idiom: importing names from outer (for mod tests) scope.
     use super::*;
 
-    // #[test]
-    // fn test_calculate_factorial_0() {
-    //     debug_assert_eq!(calculate_factorial(0), "1")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_1() {
-    //     debug_assert_eq!(calculate_factorial(1), "1")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_2() {
-    //     debug_assert_eq!(calculate_factorial(2), "2")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_3() {
-    //     debug_assert_eq!(calculate_factorial(3), "6")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_4() {
-    //     debug_assert_eq!(calculate_factorial(4), "24")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_5() {
-    //     debug_assert_eq!(calculate_factorial(5), "120")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_6() {
-    //     debug_assert_eq!(calculate_factorial(6), "720")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_7() {
-    //     debug_assert_eq!(calculate_factorial(7), "5040")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_8() {
-    //     debug_assert_eq!(calculate_factorial(8), "40320")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_9() {
-    //     debug_assert_eq!(calculate_factorial(9), "362880")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_10() {
-    //     debug_assert_eq!(calculate_factorial(10), "3628800")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_11() {
-    //     debug_assert_eq!(calculate_factorial(11), "39916800")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_12() {
-    //     debug_assert_eq!(calculate_factorial(12), "479001600")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_13() {
-    //     debug_assert_eq!(calculate_factorial(13), "6227020800")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_14() {
-    //     debug_assert_eq!(calculate_factorial(14), "87178291200")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_15() {
-    //     debug_assert_eq!(calculate_factorial(15), "1307674368000")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_16() {
-    //     debug_assert_eq!(calculate_factorial(16), "20922789888000")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_17() {
-    //     debug_assert_eq!(calculate_factorial(17), "355687428096000")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_18() {
-    //     debug_assert_eq!(calculate_factorial(18), "6402373705728000")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_19() {
-    //     debug_assert_eq!(calculate_factorial(19), "121645100408832000")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_20() {
-    //     debug_assert_eq!(calculate_factorial(20), "2432902008176640000")
-    // }
-    // #[test]
-    // fn test_calculate_factorial_21() {
-    //     debug_assert_eq!(calculate_factorial(21), "51090942171709440000")
-    // }
+    #[test]
+    fn test_calculate_factorial_0() {
+        debug_assert_eq!(calculate_factorial(0), "1")
+    }
+    #[test]
+    fn test_calculate_factorial_1() {
+        debug_assert_eq!(calculate_factorial(1), "1")
+    }
+    #[test]
+    fn test_calculate_factorial_2() {
+        debug_assert_eq!(calculate_factorial(2), "2")
+    }
+    #[test]
+    fn test_calculate_factorial_3() {
+        debug_assert_eq!(calculate_factorial(3), "6")
+    }
+    #[test]
+    fn test_calculate_factorial_4() {
+        debug_assert_eq!(calculate_factorial(4), "24")
+    }
+    #[test]
+    fn test_calculate_factorial_5() {
+        debug_assert_eq!(calculate_factorial(5), "120")
+    }
+    #[test]
+    fn test_calculate_factorial_6() {
+        debug_assert_eq!(calculate_factorial(6), "720")
+    }
+    #[test]
+    fn test_calculate_factorial_7() {
+        debug_assert_eq!(calculate_factorial(7), "5040")
+    }
+    #[test]
+    fn test_calculate_factorial_8() {
+        debug_assert_eq!(calculate_factorial(8), "40320")
+    }
+    #[test]
+    fn test_calculate_factorial_9() {
+        debug_assert_eq!(calculate_factorial(9), "362880")
+    }
+    #[test]
+    fn test_calculate_factorial_10() {
+        debug_assert_eq!(calculate_factorial(10), "3628800")
+    }
+    #[test]
+    fn test_calculate_factorial_11() {
+        debug_assert_eq!(calculate_factorial(11), "39916800")
+    }
+    #[test]
+    fn test_calculate_factorial_12() {
+        debug_assert_eq!(calculate_factorial(12), "479001600")
+    }
+    #[test]
+    fn test_calculate_factorial_13() {
+        debug_assert_eq!(calculate_factorial(13), "6227020800")
+    }
+    #[test]
+    fn test_calculate_factorial_14() {
+        debug_assert_eq!(calculate_factorial(14), "87178291200")
+    }
+    #[test]
+    fn test_calculate_factorial_15() {
+        debug_assert_eq!(calculate_factorial(15), "1307674368000")
+    }
+    #[test]
+    fn test_calculate_factorial_16() {
+        debug_assert_eq!(calculate_factorial(16), "20922789888000")
+    }
+    #[test]
+    fn test_calculate_factorial_17() {
+        debug_assert_eq!(calculate_factorial(17), "355687428096000")
+    }
+    #[test]
+    fn test_calculate_factorial_18() {
+        debug_assert_eq!(calculate_factorial(18), "6402373705728000")
+    }
+    #[test]
+    fn test_calculate_factorial_19() {
+        debug_assert_eq!(calculate_factorial(19), "121645100408832000")
+    }
+    #[test]
+    fn test_calculate_factorial_20() {
+        debug_assert_eq!(calculate_factorial(20), "2432902008176640000")
+    }
+    #[test]
+    fn test_calculate_factorial_21() {
+        debug_assert_eq!(calculate_factorial(21), "51090942171709440000")
+    }
 }
