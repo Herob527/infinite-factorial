@@ -31,11 +31,19 @@ pub fn normalise_vector(vector: Vec<Value>) -> Vec<u8> {
             result.push(entry.value)
         }
     }
+    println!("result: {:?}", result);
     let mut normalised = check_is_normalised(&result);
+    let mut iterations = 0;
     while !normalised {
         result = normalise_step(result);
+        println!("result: {:?}", result);
         normalised = check_is_normalised(&result);
+        if iterations > 100 {
+            panic!("Iterations exceeded 100")
+        }
+        iterations += 1
     }
+    println!("result: {:?}", result);
     result
 }
 
