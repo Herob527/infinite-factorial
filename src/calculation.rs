@@ -9,8 +9,6 @@ pub struct Calculation {
 impl Calculation {
     pub fn multiply(&self) -> Vec<u8> {
         let result = multiply_vectors(self.clone().first_row, self.clone().second_row);
-        // dbg!(&result);
-        // dbg!(&normalised_vector);
         normalise_vector(result)
     }
 }
