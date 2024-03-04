@@ -15,7 +15,7 @@ fn calculate_factorial(string_number: u64) -> String {
         first_row: vec![1],
         second_row: vec![1],
     };
-    for i in 1..(string_number + 2) {
+    for i in 1..=(string_number + 1) {
         let result = calculation.multiply();
         calculation.first_row = result;
         calculation.second_row = vec![i]
@@ -25,6 +25,7 @@ fn calculate_factorial(string_number: u64) -> String {
         .into_iter()
         .map(|el| el.to_string())
         .collect::<String>();
+
     stringified_row
 }
 
