@@ -1,5 +1,3 @@
-use std::ops::Deref;
-
 use crate::value::Value;
 
 fn check_is_normalised(vector: &Vec<u8>) -> bool {
@@ -23,28 +21,21 @@ fn normalise_step(vector: Vec<u8>) -> Vec<u8> {
 }
 
 pub fn normalise_vector(vector: Vec<Value>) -> Vec<u8> {
-    if vector.iter().all(|entry| entry.value < 10) {
-        return vector.iter().map(|entry| entry.value).collect();
-    };
-
     let mut result: Vec<u8> = Vec::new();
 
-    println!("{:#?}", vector);
     for entry in vector.iter() {
-        if result.get(entry.col_sum).is_some() {
+        let current_entry = result.get(entry.col_sum);
+        if current_entry.is_some() {
             result[entry.col_sum] += entry.value
         } else {
-            result.insert(0, entry.value)
+            result.push(entry.value)
         }
     }
-    println!("{:?}", result);
     let mut normalised = check_is_normalised(&result);
     while !normalised {
         result = normalise_step(result);
-        println!("{:?}", result);
         normalised = check_is_normalised(&result);
     }
-
     result
 }
 
@@ -105,5 +96,17 @@ mod tests {
     fn test_normalise_9() {
         let vector = multiply_vectors(vec![1, 2, 1], vec![1, 0]);
         debug_assert_eq!(normalise_vector(vector), vec![1, 2, 1, 0]);
+    }
+
+    #[test]
+    fn test_normalise_10() {
+        let vector = multiply_vectors(vec![3], vec![4]);
+        debug_assert_eq!(normalise_vector(vector), vec![1, 2]);
+    }
+
+    #[test]
+    fn test_normalise_11() {
+        let vector = multiply_vectors(vec![2], vec![3]);
+        debug_assert_eq!(normalise_vector(vector), vec![6]);
     }
 }

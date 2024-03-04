@@ -1,4 +1,4 @@
-use crate::{multiply_vectors::multiply_vectors, normalise_vector::normalise_vector, value::Value};
+use crate::{multiply_vectors::multiply_vectors, normalise_vector::normalise_vector};
 
 #[derive(Debug, Clone)]
 pub struct Calculation {

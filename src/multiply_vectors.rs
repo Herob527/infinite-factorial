@@ -12,7 +12,7 @@ pub fn multiply_vectors(vec1: Vec<u8>, vec2: Vec<u8>) -> Vec<Value> {
                 second_col: index_second_row,
                 col_sum,
             };
-            result.insert(0, value);
+            result.push(value);
         }
     }
     let values: Vec<u8> = result.iter().map(|x| x.value).collect();
@@ -25,15 +25,20 @@ mod tests3 {
     use crate::multiply_vectors::multiply_vectors;
 
     #[test]
-    fn test_multiply_vectors() { 
-        let vector: Vec<u8> = multiply_vectors(vec![1, 2, 1], vec![9]).iter().map(|x| x.value).collect();
+    fn test_multiply_vectors() {
+        let vector: Vec<u8> = multiply_vectors(vec![1, 2, 1], vec![9])
+            .iter()
+            .map(|x| x.value)
+            .collect();
         debug_assert_eq!(vector, vec![9, 18, 9]);
     }
-    
+
     #[test]
     fn test_multiply_vectors2() {
-
-        let vector: Vec<u8> = multiply_vectors(vec![1], vec![1, 0]).iter().map(|x| x.value).collect();
+        let vector: Vec<u8> = multiply_vectors(vec![1], vec![1, 0])
+            .iter()
+            .map(|x| x.value)
+            .collect();
         debug_assert_eq!(vector, vec![1, 0]);
     }
 }
