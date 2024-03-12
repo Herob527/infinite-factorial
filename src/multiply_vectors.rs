@@ -8,8 +8,6 @@ pub fn multiply_vectors(vec1: Vec<u64>, vec2: Vec<u64>) -> Vec<Value> {
             let col_sum = index_first_row + index_second_row;
             let value = Value {
                 value: multiplication,
-                first_col: index_first_row,
-                second_col: index_second_row,
                 col_sum,
             };
             result.push(value);
