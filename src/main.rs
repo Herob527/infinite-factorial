@@ -9,7 +9,7 @@ mod multiply_vectors;
 mod normalise_vector;
 mod value;
 
-fn calculate_factorial(string_number: u64) -> String {
+fn calculate_factorial(string_number: u16) -> String {
     if (0..=1).contains(&string_number) {
         return String::from("1");
     };

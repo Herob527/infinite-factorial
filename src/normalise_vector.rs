@@ -1,10 +1,10 @@
 use crate::value::Value;
 
-fn check_is_normalised(vector: &Vec<u64>) -> bool {
+fn check_is_normalised(vector: &Vec<u16>) -> bool {
     vector.iter().all(|entry| entry < &10)
 }
 
-fn normalise_step(vector: Vec<u64>) -> Vec<u64> {
+fn normalise_step(vector: Vec<u16>) -> Vec<u16> {
     let mut cloned_vec = vector.clone();
     let last_index = cloned_vec.len() - 1;
     for index in 0..=last_index {
@@ -22,8 +22,8 @@ fn normalise_step(vector: Vec<u64>) -> Vec<u64> {
     cloned_vec
 }
 
-pub fn normalise_vector(vector: Vec<Value>) -> Vec<u64> {
-    let mut result: Vec<u64> = Vec::new();
+pub fn normalise_vector(vector: Vec<Value>) -> Vec<u16> {
+    let mut result: Vec<u16> = Vec::new();
 
     for entry in vector.iter() {
         let current_entry = result.get(entry.col_sum);

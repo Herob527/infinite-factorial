@@ -1,6 +1,6 @@
 use crate::value::Value;
 
-pub fn multiply_vectors(vec1: Vec<u64>, vec2: Vec<u64>) -> Vec<Value> {
+pub fn multiply_vectors(vec1: Vec<u16>, vec2: Vec<u16>) -> Vec<Value> {
     let mut result: Vec<Value> = Vec::new();
     for (index_first_row, entry_first_row) in vec1.iter().enumerate() {
         for (index_second_row, entry_second_row) in vec2.iter().enumerate() {
@@ -22,7 +22,7 @@ mod tests3 {
 
     #[test]
     fn test_multiply_vectors() {
-        let vector: Vec<u64> = multiply_vectors(vec![1, 2, 1], vec![9])
+        let vector: Vec<u16> = multiply_vectors(vec![1, 2, 1], vec![9])
             .iter()
             .map(|x| x.value)
             .collect();
@@ -31,7 +31,7 @@ mod tests3 {
 
     #[test]
     fn test_multiply_vectors2() {
-        let vector: Vec<u64> = multiply_vectors(vec![1], vec![1, 0])
+        let vector: Vec<u16> = multiply_vectors(vec![1], vec![1, 0])
             .iter()
             .map(|x| x.value)
             .collect();
